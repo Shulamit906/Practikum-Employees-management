@@ -16,5 +16,7 @@ namespace Core.DTOs
         public DateTime BirthDate { get; set; }
         public string Gender { get; set; }
         public bool IsActive { get; set; }
+        public List<RoleEmployeeDto> Roles { get; set; }
+
     }
 }

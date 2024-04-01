@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0bR57tIIC2RPaxyZuNbfU2yv29Bzhmti4uFq1fKFNsOygXLNxxMXQApSKj3kMBj7MNQFyX+q+zs7lwhSapd4YA==",
+  "dgSpecHash": "FiM68yDHmbXTFgeYl4OwzxT6RlLakcYU8Z4q6hz/X11ig7w6RQNn2sCcrdIQdAhmQ9dG29P2mIS5VsHr4RtqdA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\1\\Desktop\\serverPraktykum\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\1\\Desktop\\Praktikum\\serverPraktykum\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\1\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

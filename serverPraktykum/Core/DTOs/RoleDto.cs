@@ -11,12 +11,7 @@ namespace Core.DTOs
     public class RoleDto
     {
         public int Id { get; set; }
-        public RolesName Name { get; set; }
-        public bool IsManagement { get; set; }
-        public DateTime StartDateRole { get; set; }
-
-        public int EmployeeId { get; set; }
-       // public EmployeeDto Employee { get; set; }
-
+        public string Name { get; set; }
+       
     }
 }

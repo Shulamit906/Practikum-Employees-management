@@ -14,8 +14,8 @@ namespace Core
         public MappingProfile()
         {
             CreateMap<Employee, EmployeeDto>().ReverseMap();
+            CreateMap<RoleEmployee, RoleEmployeeDto>().ReverseMap();
             CreateMap<Role,RoleDto>().ReverseMap();
-
         }
     }
 }

@@ -5,10 +5,6 @@ namespace API.Models
 {
     public class RolePostModel
     {
-        public RolesName Name { get; set; }
-        public bool IsManagement { get; set; }
-        public DateTime StartDateRole { get; set; }
-        public int EmployeeId { get; set; }
-
+        public string Name { get; set; }
     }
 }

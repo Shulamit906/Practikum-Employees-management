@@ -20,7 +20,7 @@ namespace Core.Entities
         public bool IsActive { get; set; }
 
         ////////////
-        public List<Role> Roles { get; set; }
+        public List<RoleEmployee> Roles { get; set; }
 
        
 

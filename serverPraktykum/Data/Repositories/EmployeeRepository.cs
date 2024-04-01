@@ -1,6 +1,7 @@
 ﻿
 using Core.Entities;
 using Core.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,12 @@ namespace Data.Repositories
 
         public List<Employee> GetAll()
         {
-            return _context.Employees.ToList();
+            return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ThenInclude(roleEmployee => roleEmployee.Role).ToList();
         }
 
         public Employee EmployeeGetById(int id)
         {
-            return _context.Employees.FirstOrDefault(x => x.Id == id);
+            return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ThenInclude(roleEmployee => roleEmployee.Role).FirstOrDefault(x => x.Id == id);
         }
 
         public async Task<Employee> AddEmployeeAsync(Employee employee)

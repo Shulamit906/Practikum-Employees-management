@@ -11,6 +11,6 @@ namespace API.Models
         public DateTime BirthDate { get; set; }
         public string Gender { get; set; }
         public bool IsActive { get; set; }
-        public List<RolePostModel> Roles { get; set; }
+        public List<RoleEmployeePostModel> Roles { get; set; }
     }
 }

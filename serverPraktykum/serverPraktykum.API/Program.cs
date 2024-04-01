@@ -1,3 +1,4 @@
+using API;
 using Core;
 using Core.Repositories;
 using Core.Services;
@@ -24,7 +25,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfile),typeof(ApiMappingProfile));
 
 
 //builder.Services.AddSingleton<DataContext>();

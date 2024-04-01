@@ -68,13 +68,30 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Core.Entities.RoleEmployee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsManagement")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Name")
+                    b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDateRole")
@@ -84,18 +101,26 @@ namespace Data.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("Roles");
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RolesEmployees");
                 });
 
-            modelBuilder.Entity("Core.Entities.Role", b =>
+            modelBuilder.Entity("Core.Entities.RoleEmployee", b =>
                 {
-                    b.HasOne("Core.Entities.Employee", "Employee")
+                    b.HasOne("Core.Entities.Employee", null)
                         .WithMany("Roles")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Employee");
+                    b.HasOne("Core.Entities.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("Core.Entities.Employee", b =>
