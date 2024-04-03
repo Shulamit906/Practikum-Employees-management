@@ -2,7 +2,8 @@ import * as Actions from './action'
 
 const initalseState = {
 
-    employees: []
+    employees: [],
+    roles:[]
 
 }
 
@@ -19,14 +20,21 @@ const reducer = (state = initalseState, action) => {
             return { ...state, employees }
         case Actions.EDIT_EMPLOYEE: {
             const employees = [...state.employees];
-            const findIndex = employees.findIndex(x => x.Id == action.payload.Id);
+            const findIndex = employees.findIndex(x => x.id == action.payload.id);
+            console.log(findIndex,"findIndex")
             employees[findIndex] = action.payload;
             return { ...state, employees }
         }
         case Actions.DELETE_EMPLOYEE: {
-            const employees = state.employees.filter(x => x.Id !== action.payload.Id)
+            const employees = state.employees.filter(x => x.id !== action.payload.id)
             return { ...state, employees }
         }
+        case Actions.GET_ROLES:
+            return { ...state, roles: action.payload }
+        case Actions.ADD_ROLE:
+            const roles = [...state.roles];
+            roles.push(action.payload);
+            return { ...state, roles }
         default: return { ...state }
     }
 }

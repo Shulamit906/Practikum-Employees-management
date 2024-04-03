@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
+    public enum Gender
+    {
+        Male=1,
+        Female,
+        Other
+    }
 
     public class Employee
     {
@@ -16,7 +22,7 @@ namespace Core.Entities
         public string Tz { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime BirthDate { get; set; }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public bool IsActive { get; set; }
 
         ////////////

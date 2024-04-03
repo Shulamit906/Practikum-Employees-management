@@ -9,7 +9,7 @@ namespace API.Models
         public string Tz { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime BirthDate { get; set; }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public bool IsActive { get; set; }
         public List<RoleEmployeePostModel> Roles { get; set; }
     }

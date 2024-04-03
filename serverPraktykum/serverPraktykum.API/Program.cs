@@ -22,6 +22,11 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(opt => opt.AddPolicy("MyPolicy", policy =>
+{
+    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+}));
+
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
@@ -44,6 +49,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("MyPolicy");
 
 app.UseAuthorization();
 

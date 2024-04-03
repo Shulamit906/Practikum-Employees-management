@@ -21,12 +21,13 @@ namespace Data.Repositories
 
         public List<Employee> GetAll()
         {
-            return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ThenInclude(roleEmployee => roleEmployee.Role).ToList();
+            return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ToList();
+            //.ThenInclude(roleEmployee => roleEmployee.Role)
         }
 
         public Employee EmployeeGetById(int id)
         {
-            return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ThenInclude(roleEmployee => roleEmployee.Role).FirstOrDefault(x => x.Id == id);
+            return _context.Employees.Include(roleEmployee => roleEmployee.Roles).FirstOrDefault(x => x.Id == id);
         }
 
         public async Task<Employee> AddEmployeeAsync(Employee employee)

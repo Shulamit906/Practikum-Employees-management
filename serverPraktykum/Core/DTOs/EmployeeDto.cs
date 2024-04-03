@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Core.DTOs
         public string Tz { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime BirthDate { get; set; }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public bool IsActive { get; set; }
         public List<RoleEmployeeDto> Roles { get; set; }
 

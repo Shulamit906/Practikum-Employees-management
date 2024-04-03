@@ -11,12 +11,12 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WorkersController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
         private readonly IMapper _mapper;
 
-        public WorkersController(IEmployeeService employeeService,IMapper mapper)
+        public EmployeesController(IEmployeeService employeeService,IMapper mapper)
         {
             _employeeService = employeeService;
             _mapper = mapper;

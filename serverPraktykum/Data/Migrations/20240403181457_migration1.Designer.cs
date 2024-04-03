@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240331150833_11Migration")]
-    partial class _11Migration
+    [Migration("20240403181457_migration1")]
+    partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,9 +39,8 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -70,13 +69,30 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Core.Entities.RoleEmployee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsManagement")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Name")
+                    b.Property<int>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartDateRole")
@@ -86,18 +102,16 @@ namespace Data.Migrations
 
                     b.HasIndex("EmployeeId");
 
-                    b.ToTable("Roles");
+                    b.ToTable("RolesEmployees");
                 });
 
-            modelBuilder.Entity("Core.Entities.Role", b =>
+            modelBuilder.Entity("Core.Entities.RoleEmployee", b =>
                 {
-                    b.HasOne("Core.Entities.Employee", "Employee")
+                    b.HasOne("Core.Entities.Employee", null)
                         .WithMany("Roles")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Core.Entities.Employee", b =>

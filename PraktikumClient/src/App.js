@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getEmployees } from './service/EmployeeService';
+import DisplayEmployees from './components/employee/displayEmployees';
+import HomePage from './components/homePage';
+import AddEmployee from './components/employee/addEmployee';
+import Header from './components/header';
+import { getRoles } from './service/RoleService';
 
 function App() {
+
+  const dispatch = useDispatch()
+  const navig = useNavigate()
+  useEffect(() => {
+    dispatch(getEmployees())
+    dispatch(getRoles())
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/homePage" element={<HomePage />} />
+        <Route path="/displayEmployees" element={<DisplayEmployees />} />
+        <Route path="/addEmployee" element={<AddEmployee />} />
+        <Route path="/editEmployee" element={<AddEmployee />} />
+      </Routes>
+     
+
     </div>
+
   );
 }
 
