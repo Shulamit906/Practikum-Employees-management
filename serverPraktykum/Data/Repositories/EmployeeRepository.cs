@@ -32,6 +32,15 @@ namespace Data.Repositories
 
         public async Task<Employee> AddEmployeeAsync(Employee employee)
         {
+            //_context.Employees.Add(employee);
+            //await _context.SaveChangesAsync();
+            //return employee;
+            foreach (var role in employee.Roles)
+            {
+                if (role.StartDateRole <= employee.StartDate)
+                    throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
+            }
+
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
             return employee;
@@ -42,6 +51,12 @@ namespace Data.Repositories
             var existingEmployee = _context.Employees.FirstOrDefault(x => x.Id == id);
             if (existingEmployee != null)
             {
+                foreach (var role in employee.Roles)
+                {
+                    if (role.StartDateRole <= employee.StartDate)
+                        throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
+                }
+
                 existingEmployee.FirstName = employee.FirstName;
                 existingEmployee.LastName = employee.LastName;
                 existingEmployee.Tz = employee.Tz;
@@ -50,11 +65,31 @@ namespace Data.Repositories
                 existingEmployee.Gender = employee.Gender;
                 existingEmployee.Roles = employee.Roles;
                 existingEmployee.IsActive = employee.IsActive;
-
             }
+
             await _context.SaveChangesAsync();
             return existingEmployee;
         }
+
+
+        //public async Task<Employee> UpdateEmployeeAsync(int id, Employee employee)
+        //{
+        //    var existingEmployee = _context.Employees.FirstOrDefault(x => x.Id == id);
+        //    if (existingEmployee != null)
+        //    {
+        //        existingEmployee.FirstName = employee.FirstName;
+        //        existingEmployee.LastName = employee.LastName;
+        //        existingEmployee.Tz = employee.Tz;
+        //        existingEmployee.StartDate = employee.StartDate;
+        //        existingEmployee.BirthDate = employee.BirthDate;
+        //        existingEmployee.Gender = employee.Gender;
+        //        existingEmployee.Roles = employee.Roles;
+        //        existingEmployee.IsActive = employee.IsActive;
+
+        //    }
+        //    await _context.SaveChangesAsync();
+        //    return existingEmployee;
+        //}
 
         public async Task<Employee> DeleteEmployeeAsync(int id)
         {
