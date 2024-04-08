@@ -1,13 +1,13 @@
 const HomePage = () => {
     return <div className="homePage background-img backgroundPage">
         <p className="text my-form">
-        ברוך הבא לאפליקציית ניהול עובדים!
+            Welcome to the employee management app!
             <br />
-            כאן תוכל לנהל בקלות ובנוחות את רשימת העובדים של הארגון שלך.
+            Here you can easily and conveniently manage your organization's employee list.
             <br />
-            השתמש בתפריט הניווט למעלה כדי לנווט בין העמודים ולבצע פעולות כגון הוספה, עריכה ומחיקה של עובדים.
+            Use the navigation menu above to navigate through the pages and perform actions such as adding, editing and deleting employees.
             <br />
-            נשמח לעזור בכל שאלה או בקשה שיש לך. בהצלחה!
+            We will be happy to help with any questions or requests you may have. Successfully!
         </p>
     </div>
 }

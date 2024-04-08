@@ -3,15 +3,15 @@ import * as Actions from './action'
 const initalseState = {
 
     employees: [],
-    roles:[]
+    roles: []
 
 }
 
 const reducer = (state = initalseState, action) => {
 
     switch (action.type) {
-        
-        
+
+
         case Actions.GET_EMPLOYEES:
             return { ...state, employees: action.payload }
         case Actions.ADD_EMPLOYEE:
@@ -21,7 +21,7 @@ const reducer = (state = initalseState, action) => {
         case Actions.EDIT_EMPLOYEE: {
             const employees = [...state.employees];
             const findIndex = employees.findIndex(x => x.id == action.payload.id);
-            console.log(findIndex,"findIndex")
+            console.log(findIndex, "findIndex")
             employees[findIndex] = action.payload;
             return { ...state, employees }
         }

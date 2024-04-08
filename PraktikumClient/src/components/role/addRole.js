@@ -10,7 +10,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 const schema = yup
     .object({
-        name: yup.string().required("שדה חובה"),
+        name: yup.string().required("Required field"),
     })
     .required()
 
@@ -36,7 +36,7 @@ const AddRole = () => {
                 </h4>
             ))}
         </div>
-        <div  className="content">
+        <div className="content">
             <form onSubmit={handleSubmit(onSubmit)} >
 
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120, maxWidth: 185 }}>
@@ -46,7 +46,7 @@ const AddRole = () => {
                 </FormControl>
                 <br />
                 <Button type="submit" variant="outlined" startIcon={< SendIcon />} style={{ color: '#00aa9d', marginTop: '10px' }}>
-                      Submit
+                    Submit
                 </Button>
             </form>
         </div>

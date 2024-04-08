@@ -14,25 +14,25 @@ export function addNewRole(data) {
 
   return dispatch => {
     axios.post("https://localhost:7130/api/Role", data)
-    .then(x => {
-      dispatch({ type: 'ADD_ROLE', payload: x.data })
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "התפקיד נוסף בהצלחה",
-        showConfirmButton: false,
-        timer: 1500
-      });
-    })
-    .catch(err => {
-      console.log(err)
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "התפקיד כבר קיים",
-        showConfirmButton: false,
-        timer: 1500
-      });
-    })
+      .then(x => {
+        dispatch({ type: 'ADD_ROLE', payload: x.data })
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "The role was successfully added",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch(err => {
+        console.log(err)
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "The role already exists",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
   }
 }

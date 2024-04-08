@@ -15,18 +15,18 @@ import SendIcon from '@mui/icons-material/Send';
 
 
 const schema = yup.object({
-    firstName: yup.string().required("שדה חובה").min(3, "at list 3 characters"),
-    lastName: yup.string().required("שדה חובה").min(3, "at list 3 characters"),
-    tz: yup.string().required("שדה חובה").max(9, "Maximum 9 characters"),
-    startDate: yup.date().typeError('תאריך חוקי חובה').required('תאריך חוקי חובה'),
-    birthDate: yup.date().typeError('תאריך חוקי חובה').required('תאריך חוקי חובה'),
-    gender: yup.number().required("שדה חובה"),
+    firstName: yup.string().required("Required field").min(3, "at list 3 characters"),
+    lastName: yup.string().required("Required field").min(3, "at list 3 characters"),
+    tz: yup.string().required("Required field").max(9, "Maximum 9 characters"),
+    startDate: yup.date().typeError('The date is invalid').required("Required field"),
+    birthDate: yup.date().typeError('The date is invalid').required("Required field"),
+    gender: yup.number().required("Required field"),
     isActive: yup.bool().default(true),
     roles: yup.array().of(
         yup.object().shape({
-            roleId: yup.number().required("שדה חובה"),
-            isManagement: yup.bool().required("שדה חובה"),
-            startDateRole: yup.date().typeError('תאריך חוקי חובה').required('תאריך חוקי חובה'),
+            roleId: yup.number().required("Required field"),
+            isManagement: yup.bool().required("Required field"),
+            startDateRole: yup.date().typeError('The date is invalid').required("Required field"),
         })
     ),
 }).required();
@@ -44,8 +44,8 @@ const AddEmployee = () => {
     });
 
     useEffect(() => {
-        dispatch(getEmployees()); 
-      }, [dispatch]);
+        dispatch(getEmployees());
+    }, [dispatch]);
 
     useEffect(() => {
         if (employee) {
@@ -89,7 +89,7 @@ const AddEmployee = () => {
     });
 
     return (
-        <div  className='add background-img backgroundPage'>
+        <div className='add background-img backgroundPage'>
             <div>
                 {state ? <h2>Edit Employee</h2> : <h2>Add Employee</h2>}
             </div>

@@ -21,7 +21,7 @@ export function addNewEmployee(data, navig) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "העובד נוסף בהצלחה",
+          title: "Employee added successfully",
           showConfirmButton: false,
           timer: 1500
         });
@@ -32,7 +32,7 @@ export function addNewEmployee(data, navig) {
         Swal.fire({
           position: "top-end",
           icon: "error",
-          title: "קרתה תקלה בהוספת העובד נסה שנית",
+          title: "There was an error adding the employee, try again",
           showConfirmButton: false,
           timer: 1500
         });
@@ -51,7 +51,7 @@ export function editEmployee(id, data, navig) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "פרטי העובד שונו בהצלחה",
+          title: "Employee details have been successfully changed",
           showConfirmButton: false,
           timer: 1500
         });
@@ -62,7 +62,7 @@ export function editEmployee(id, data, navig) {
         Swal.fire({
           position: "top-end",
           icon: "error",
-          title: "קרתה תקלה בעידכון פרטי העובד נסה שנית",
+          title: "There was an error updating the employee details, try again",
           showConfirmButton: false,
           timer: 1500
         });
@@ -80,7 +80,7 @@ export function deleteEmployee(id, navig) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: " העובד נמחק בהצלחה",
+          title: "The employee has been successfully deleted",
           showConfirmButton: false,
           timer: 1500
         });
@@ -91,7 +91,7 @@ export function deleteEmployee(id, navig) {
         Swal.fire({
           position: "top-end",
           icon: "eroor",
-          title: "קרתה תקלה במחיקת העובד נסה שנית",
+          title: "There was an error deleting the employee, try again",
           showConfirmButton: false,
           timer: 1500
         });

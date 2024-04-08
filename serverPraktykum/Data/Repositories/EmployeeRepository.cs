@@ -22,7 +22,6 @@ namespace Data.Repositories
         public List<Employee> GetAll()
         {
             return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ToList();
-            //.ThenInclude(roleEmployee => roleEmployee.Role)
         }
 
         public Employee EmployeeGetById(int id)
@@ -32,9 +31,6 @@ namespace Data.Repositories
 
         public async Task<Employee> AddEmployeeAsync(Employee employee)
         {
-            //_context.Employees.Add(employee);
-            //await _context.SaveChangesAsync();
-            //return employee;
             foreach (var role in employee.Roles)
             {
                 if (role.StartDateRole < employee.StartDate)

@@ -42,7 +42,7 @@ const styles = theme => ({
     table: {
         minWidth: 700,
         padding: '80px',
-       
+
     },
     employee: {
         '&:nth-of-type(odd)': {
@@ -56,7 +56,7 @@ const styles = theme => ({
         width: '200px',
         border: '2px solid #00aa9d',
         borderRadius: '8.5%'
-       
+
     },
 });
 
@@ -93,15 +93,15 @@ const DisplayEmployees = (props) => {
             setOpen(true);
         }
     };
-    
-  
+
+
 
     useEffect(() => {
         if (open) {
-            setPopupEmployee(popupEmployee); 
+            setPopupEmployee(popupEmployee);
         }
-    }, [open, popupEmployee]) 
-    
+    }, [open, popupEmployee])
+
 
     return (<>
         <TextField
@@ -124,9 +124,9 @@ const DisplayEmployees = (props) => {
                 </TableHead>
                 <TableBody>
                     {filteredEmployees.map(employee => (
-                        <TableRow 
-                            className={classes.employee} 
-                            key={employee.id} 
+                        <TableRow
+                            className={classes.employee}
+                            key={employee.id}
                             onClick={() => handleRowClick(employee)}
                         >
                             <CustomTableCell align="center">{employee.firstName}</CustomTableCell>
@@ -153,8 +153,8 @@ const DisplayEmployees = (props) => {
         </Paper>
         <EmployeeDetailsPopup open={open} employee={popupEmployee} onClose={() => setOpen(false)} />
         <Button className='Download-btn' variant="outlined" startIcon={<DownloadIcon />} onClick={exportToExcel} style={{ color: '#00aa9d' }}>
-        Export to Excel
-      </Button>
+            Export to Excel
+        </Button>
     </>);
 }
 

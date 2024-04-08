@@ -8,10 +8,7 @@ namespace Core.DTOs
 {
     public class RoleEmployeeDto
     {
-       // public int Id { get; set; }
         public int RoleId { get; set; }
-
-        //public RoleDto Role { get; set; }
         public bool IsManagement { get; set; }
         public DateTime StartDateRole { get; set; }
 
