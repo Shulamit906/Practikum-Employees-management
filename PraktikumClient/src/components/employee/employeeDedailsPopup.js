@@ -51,12 +51,13 @@ import Typography from '@mui/material/Typography';
 
 const EmployeeDetailsPopup = ({ employee, open, onClose }) => {
     if (!employee) {
-        return null; // אם העובד אינו מוגדר, תחזיר ריק
+        return null;
     }
 
     return (
-        <Dialog open={open} onClose={onClose}>
-            <DialogTitle>פרטי העובד</DialogTitle>
+        <Dialog open={open} onClose={onClose} PaperProps={{ sx: { width: '450px' } }}>
+
+            <DialogTitle>{employee.firstName} {employee.lastName} - details</DialogTitle>
             <IconButton
                 aria-label="close"
                 onClick={onClose}
@@ -70,22 +71,36 @@ const EmployeeDetailsPopup = ({ employee, open, onClose }) => {
                 <CloseIcon />
             </IconButton>
             <DialogContent dividers>
-                <Typography variant="body1">שם: {employee.firstName}</Typography>
-                <Typography variant="body1">תאריך לידה: {employee.birthDate}</Typography>
-                <Typography variant="body1">תאריך התחלה: {employee.startDate}</Typography>
-                <Typography variant="body1">מין: {employee.gender}</Typography>
-                <Typography variant="body1">רשימת תפקידים:</Typography>
+                <Typography variant="body1">Name: {employee.firstName} {employee.lastName}</Typography>
+                <Typography variant="body1">Tz: {employee.tz} </Typography>
+                <Typography variant="body1"> BirthDate: {employee.birthDate}</Typography>
+                <Typography variant="body1"> StartDate: {employee.startDate}</Typography>
+                <Typography variant="body1">
+                    Gender: {(() => {
+                        switch (employee.gender) {
+                            case 1:
+                                return "Male";
+                            case 2:
+                                return "Female";
+                            case 3:
+                                return "Other";
+                            default:
+                                return "Unknown";
+                        }
+                    })()}
+                </Typography>
+
+                {/* <Typography variant="body1">רשימת תפקידים:</Typography>
                 <ul>
                     {employee.roles.map((role, index) => (
                         <li key={index}>{role.roleId}</li>
                     ))}
-                </ul>
-                {/* הוספת פרטים נוספים כרצונך */}
+                </ul> */}
             </DialogContent>
 
             <DialogActions>
                 <Button autoFocus onClick={onClose}>
-                    סגור
+                    close
                 </Button>
             </DialogActions>
         </Dialog>

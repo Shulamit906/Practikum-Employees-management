@@ -36,7 +36,7 @@ const AddRole = () => {
                 </h4>
             ))}
         </div>
-        <div  className="content ll">
+        <div  className="content">
             <form onSubmit={handleSubmit(onSubmit)} >
 
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120, maxWidth: 185 }}>
@@ -45,9 +45,8 @@ const AddRole = () => {
                     <p>{errors.name?.message}</p>
                 </FormControl>
                 <br />
-                {/* <Input type="submit" className="my-button" value="Submit" /> */}
-                <Button type="submit" className='Download-btn' variant="outlined" endIcon={<SendIcon />} style={{ color: '#00aa9d', marginTop: '10px' }}>
-                    Submit
+                <Button type="submit" variant="outlined" startIcon={< SendIcon />} style={{ color: '#00aa9d', marginTop: '10px' }}>
+                      Submit
                 </Button>
             </form>
         </div>

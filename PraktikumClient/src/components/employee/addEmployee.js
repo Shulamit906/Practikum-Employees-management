@@ -44,7 +44,7 @@ const AddEmployee = () => {
     });
 
     useEffect(() => {
-        dispatch(getEmployees()); // Dispatch the getWorkers action when component mounts
+        dispatch(getEmployees()); 
       }, [dispatch]);
 
     useEffect(() => {
@@ -93,7 +93,6 @@ const AddEmployee = () => {
             <div>
                 {state ? <h2>Edit Employee</h2> : <h2>Add Employee</h2>}
             </div>
-            {/* <form className='my-form background-img backgroundPage' onSubmit={handleSubmit(onSubmit)}> */}
             <form className='my-form' onSubmit={handleSubmit(onSubmit)}>
 
 
@@ -202,7 +201,7 @@ const AddEmployee = () => {
                     Add Role
                 </Button>
                 <br />
-                <Button type="submit" className='Download-btn' variant="outlined" endIcon={<SendIcon />} style={{ color: '#00aa9d', marginTop: '10px' }}>
+                <Button type="submit" variant="outlined" endIcon={<SendIcon />} style={{ color: '#00aa9d', marginTop: '10px' }}>
                     Submit
                 </Button>
             </form >
