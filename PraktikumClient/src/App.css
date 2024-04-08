@@ -93,12 +93,107 @@ a {
 .roles {
   margin-top: 35px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  /* baseline */
+  justify-content: center;
+  align-items: stretch
+}
+
+/* .my-form {
+  margin-top: 45px;
+} */
+
+.my-div {
+  display: flex;
+}
+
+.background-img {
+  background-size: cover;
+  background-position: center;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  margin-bottom: -150px;
+
 
 }
 
+
+/* 
+.backgroundPage {
+  background-image: url('../images/home.jpg');
+
+} */
+
+.roless {
+  direction: rtl;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h2 {
+  color: #00aa9d;
+}
+
+.text {
+  font-weight: bold;
+  padding: 90px;
+}
+
+/* 
+.background-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  margin-bottom: -50px; 
+  background-image: url('../images/home.jpg');
+}
+
 .my-form {
-  margin-top: 45px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); 
+} */
+
+.background-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  margin-bottom: -50px;
+  background-image: url('../images/home.jpg');
+}
+
+.my-form {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* לבן עם שקיפות */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  /* צל קל למראה מודרני */
+  width: 45%;
+  /* רוחב הטופס */
+  margin: auto;
+  /* מרכז הטופס באמצע הדף */
+  margin-bottom: 15px;
+
+
+}
+
+.add {
+  height: 100%;
+  margin-top: -20px;
+  padding-bottom: 20px;
+}
+
+.homePage {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center
 }

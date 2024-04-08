@@ -21,7 +21,6 @@ namespace Data.Repositories
         public List<Role> GetAll()
         {
             return _context.Roles.ToList();
-            // return _context.Employees.Include(roleEmployee => roleEmployee.Roles).ThenInclude(roleEmployee => roleEmployee.Role).ToList();
         }
 
         public Role RoleGetById(int id)
@@ -31,6 +30,10 @@ namespace Data.Repositories
 
         public async Task<Role> AddRoleAsync(Role role)
         {
+            foreach (var existingRole in _context.Roles)
+                if (existingRole.Name.ToLower() == role.Name.ToLower())
+                    throw new InvalidOperationException($"קיים כבר תפקיד בשם {role.Name}.");
+
             _context.Roles.Add(role);
             await _context.SaveChangesAsync();
             return role;

@@ -133,9 +133,6 @@
 // // export default withStyles(styles)(DisplayEmployees);
 
 
-
-
-
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -292,7 +289,6 @@ const DisplayEmployees = (props) => {
         <Button className='Download-btn' variant="outlined" startIcon={<DownloadIcon />} onClick={exportToExcel} style={{ color: '#00aa9d' }}>
         Export to Excel
       </Button>
-        {/* <button >Export to Excel</button> */}
     </>);
 }
 

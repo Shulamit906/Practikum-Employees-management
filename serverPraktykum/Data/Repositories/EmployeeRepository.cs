@@ -72,25 +72,6 @@ namespace Data.Repositories
         }
 
 
-        //public async Task<Employee> UpdateEmployeeAsync(int id, Employee employee)
-        //{
-        //    var existingEmployee = _context.Employees.FirstOrDefault(x => x.Id == id);
-        //    if (existingEmployee != null)
-        //    {
-        //        existingEmployee.FirstName = employee.FirstName;
-        //        existingEmployee.LastName = employee.LastName;
-        //        existingEmployee.Tz = employee.Tz;
-        //        existingEmployee.StartDate = employee.StartDate;
-        //        existingEmployee.BirthDate = employee.BirthDate;
-        //        existingEmployee.Gender = employee.Gender;
-        //        existingEmployee.Roles = employee.Roles;
-        //        existingEmployee.IsActive = employee.IsActive;
-
-        //    }
-        //    await _context.SaveChangesAsync();
-        //    return existingEmployee;
-        //}
-
         public async Task<Employee> DeleteEmployeeAsync(int id)
         {
             var employeeToDelete = _context.Employees.FirstOrDefault(x => x.Id == id);
