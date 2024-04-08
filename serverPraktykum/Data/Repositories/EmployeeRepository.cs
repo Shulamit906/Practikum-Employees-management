@@ -37,7 +37,7 @@ namespace Data.Repositories
             //return employee;
             foreach (var role in employee.Roles)
             {
-                if (role.StartDateRole <= employee.StartDate)
+                if (role.StartDateRole < employee.StartDate)
                     throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
             }
 
@@ -53,7 +53,7 @@ namespace Data.Repositories
             {
                 foreach (var role in employee.Roles)
                 {
-                    if (role.StartDateRole <= employee.StartDate)
+                    if (role.StartDateRole < employee.StartDate)
                         throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
                 }
 

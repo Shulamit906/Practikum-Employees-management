@@ -148,3 +148,5 @@ C:\Users\1\Desktop\Praktikum\serverPraktykum\serverPraktykum.API\obj\Debug\net6.
 C:\Users\1\Desktop\Praktikum\serverPraktykum\serverPraktykum.API\obj\Debug\net6.0\API.pdb
 C:\Users\1\Desktop\Praktikum\serverPraktykum\serverPraktykum.API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\1\Desktop\Praktikum\serverPraktykum\serverPraktykum.API\obj\Debug\net6.0\ref\API.dll
+C:\Users\1\Desktop\Praktikum\serverPraktykum\serverPraktykum.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\1\Desktop\Praktikum\serverPraktykum\serverPraktykum.API\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

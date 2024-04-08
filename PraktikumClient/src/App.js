@@ -8,6 +8,7 @@ import HomePage from './components/homePage';
 import AddEmployee from './components/employee/addEmployee';
 import Header from './components/header';
 import { getRoles } from './service/RoleService';
+import AddRole from './components/role/addRole';
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
         <Route path="/displayEmployees" element={<DisplayEmployees />} />
         <Route path="/addEmployee" element={<AddEmployee />} />
         <Route path="/editEmployee" element={<AddEmployee />} />
+        <Route path="/addRole" element={<AddRole />} />
+
       </Routes>
      
 
