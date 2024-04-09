@@ -121,14 +121,14 @@ const AddEmployee = () => {
                 <br />
 
                 <FormControl variant="standard" style={{ width: '250px' }}>
-                    <InputLabel id="demo-simple-input-standard-label"> StartDate </InputLabel>
+                   <p> StartDate </p>
                     <Input {...register("startDate")} type="date" />
                     <p>{errors.startDate?.message}</p>
                 </FormControl>
                 <br />
 
                 <FormControl variant="standard" style={{ width: '250px' }}>
-                    <InputLabel id="demo-simple-input-standard-label"> BirthDate </InputLabel>
+                    <p> BirthDate </p>
                     <Input {...register("birthDate")} type="date" />
                     <p>{errors.birthDate?.message}</p>
                 </FormControl>
@@ -184,7 +184,7 @@ const AddEmployee = () => {
                         </FormControl>
 
                         <FormControl className='my-space' variant="standard" sx={{ m: 1, minWidth: 120, maxWidth: 185 }} style={{ marginLeft: '20px' }}>
-                            <InputLabel id={`demo-simple-input-standard-label-startDateRole-${index}`}> Role's Start Date</InputLabel>
+                            <p> Role's Start Date</p>
                             <Input {...register(`roles.${index}.startDateRole`)} type="date" />
                             <p>{errors?.roles?.[index]?.startDateRole?.message}</p>
                         </FormControl>

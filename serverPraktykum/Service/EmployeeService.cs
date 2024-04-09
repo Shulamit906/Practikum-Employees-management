@@ -31,11 +31,21 @@ namespace Service
 
         public async Task<Employee> AddEmployeeAsync(Employee employee)
         {
+            foreach (var role in employee.Roles)
+            {
+                if (role.StartDateRole < employee.StartDate)
+                    throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
+            }
             return await _employeeRepository.AddEmployeeAsync(employee);
         }
 
         public async Task<Employee> UpdateEmployeeAsync(int id, Employee employee)
         {
+            foreach (var role in employee.Roles)
+            {
+                if (role.StartDateRole < employee.StartDate)
+                    throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
+            }
             return await _employeeRepository.UpdateEmployeeAsync(id, employee);
         }
 

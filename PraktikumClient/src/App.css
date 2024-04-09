@@ -94,7 +94,8 @@ a {
   margin-top: 35px;
   display: flex;
   justify-content: center;
-  align-items: stretch
+  /* align-items: stretch */
+  align-items: center
 }
 
 .my-div {
@@ -166,4 +167,8 @@ h2 {
 }
 .popup{
   padding: 100px;
+}
+p{
+  /* display: flex; */
+  text-align: left;
 }

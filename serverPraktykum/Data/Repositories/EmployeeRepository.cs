@@ -31,11 +31,11 @@ namespace Data.Repositories
 
         public async Task<Employee> AddEmployeeAsync(Employee employee)
         {
-            foreach (var role in employee.Roles)
-            {
-                if (role.StartDateRole < employee.StartDate)
-                    throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
-            }
+            //foreach (var role in employee.Roles)
+            //{
+            //    if (role.StartDateRole < employee.StartDate)
+            //        throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
+            //}
 
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
@@ -47,11 +47,11 @@ namespace Data.Repositories
             var existingEmployee = _context.Employees.FirstOrDefault(x => x.Id == id);
             if (existingEmployee != null)
             {
-                foreach (var role in employee.Roles)
-                {
-                    if (role.StartDateRole < employee.StartDate)
-                        throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
-                }
+                //foreach (var role in employee.Roles)
+                //{
+                //    if (role.StartDateRole < employee.StartDate)
+                //        throw new InvalidOperationException($"תאריך ההתחלה של תפקיד {role.RoleId} חייב להיות לפני או שווה לתאריך ההתחלה של העובד.");
+                //}
 
                 existingEmployee.FirstName = employee.FirstName;
                 existingEmployee.LastName = employee.LastName;
