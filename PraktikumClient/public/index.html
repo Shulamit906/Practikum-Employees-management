@@ -25,6 +25,25 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDVH2O7mhLoXIEtwLxHXNgxf4KM-DLfcm0",
+        authDomain: "practikum-client.firebaseapp.com",
+        projectId: "practikum-client",
+        storageBucket: "practikum-client.appspot.com",
+        messagingSenderId: "748863899431",
+        appId: "1:748863899431:web:36686637c44444bd454b02"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
